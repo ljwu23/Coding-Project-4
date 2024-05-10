@@ -24,8 +24,8 @@ int main(int argc, char** argv)
 #define MAX_PROBLEM_SIZE 1 << 29  //  256M
     std::vector<int64_t> problem_sizes{ MAX_PROBLEM_SIZE >> 5, MAX_PROBLEM_SIZE >> 4, MAX_PROBLEM_SIZE >> 3, MAX_PROBLEM_SIZE >> 2, MAX_PROBLEM_SIZE >> 1, MAX_PROBLEM_SIZE};
 
-    std::vector<uint64_t> A(MAX_PROBLEM_SIZE);
-
+    std::vector<float> x(MAX_PROBLEM_SIZE, 1.0f);
+    std::vector<float> y(MAX_PROBLEM_SIZE, 2.0f);
 
     int64_t t;
     int n_problems = problem_sizes.size();
