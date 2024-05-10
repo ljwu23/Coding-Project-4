@@ -29,7 +29,6 @@ int main(int argc, char** argv)
       // Insert your timer code here
       auto START_TIMER = std::chrono::steady_clock::now();
 
-      // Invoke the add function to perform the addition
       add(n, x.data(), y.data());
 
       // Insert your end timer code here, and print out elapsed time for this problem size
