@@ -6,7 +6,11 @@
 #include <vector>
 #include <string.h>
 
-void add(int n, float *x, float *y);
+void add(int n, float *x, float *y) {
+    for (int i = 0; i < n; i++) {
+        y[i] = x[i] + y[i];
+    }
+}
 
 /* The benchmarking program */
 int main(int argc, char** argv) 
