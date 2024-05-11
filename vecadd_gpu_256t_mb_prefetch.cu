@@ -19,15 +19,15 @@ int main(void)
   cudaMallocManaged(&x, N*sizeof(float));
   cudaMallocManaged(&y, N*sizeof(float));
   
-  int deviceID = 0;
-  cudaMemPrefetchAsync((void *)x, N*sizeof(float), deviceID);
-  cudaMemPrefetchAsync((void *)y, N*sizeof(float), deviceID);
-
   // initialize x and y arrays on the host
   for (int i = 0; i < N; i++) {
     x[i] = 1.0f;
     y[i] = 2.0f;
   }
+  
+  int deviceID = 0;
+  cudaMemPrefetchAsync((void *)x, N*sizeof(float), deviceID);
+  cudaMemPrefetchAsync((void *)y, N*sizeof(float), deviceID);
 
   int blockSize = 256;
   int numBlocks = (N + blockSize - 1) / blockSize;
